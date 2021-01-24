@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj": {}
+    "d:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj": {}
   },
   "projects": {
-    "D:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj": {
+    "d:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj",
+        "projectUniqueName": "d:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj",
         "projectName": "DatingApp.API",
-        "projectPath": "D:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj",
+        "projectPath": "d:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj",
         "packagesPath": "C:\\Users\\Roger\\.nuget\\packages\\",
-        "outputPath": "D:\\DatingApp\\DatingApp.API\\obj\\",
+        "outputPath": "d:\\DatingApp\\DatingApp.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Roger\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -35,6 +35,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
