@@ -36,6 +36,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.2, )"
@@ -50,9 +54,13 @@
               "target": "Package",
               "version": "[5.0.2, )"
             },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.8.0, )"
+            },
             "System.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[5.0.0-rc1-211161024, )"
+              "version": "[5.0.0-beta8-210131116, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

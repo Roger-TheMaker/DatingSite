@@ -12,6 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace DatingApp.API
 {
@@ -32,6 +34,8 @@ namespace DatingApp.API
             services.AddControllers();
             services.AddCors();
             services.AddScoped<IAuthRespository, AuthRepository>();
+            services.AddAuthentication(JwtBearerDefaults.AuthentificationScheme)
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

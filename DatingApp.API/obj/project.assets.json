@@ -11,6 +11,9 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.2": {
+        "type": "package"
+      },
       "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
@@ -422,7 +425,7 @@
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
       },
-      "System.IdentityModel.Tokens/5.0.0-rc1-211161024": {
+      "System.IdentityModel.Tokens/5.0.0-beta8-210131116": {
         "type": "package",
         "compile": {
           "lib/net451/System.IdentityModel.Tokens.dll": {}
@@ -503,6 +506,21 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.2": {
+      "sha512": "Eb7daSO4H2SO4/StrJ6ka9Zx+v2Ht51D0ha229fA05ZyUjiuMkykQFPaQWg2Rkke246PGEkNgM/sCJ9eHxh0+A==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/5.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "microsoft.aspnetcore.authentication.jwtbearer.5.0.2.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
     "Microsoft.CSharp/4.7.0": {
@@ -1190,18 +1208,20 @@
         "version.txt"
       ]
     },
-    "System.IdentityModel.Tokens/5.0.0-rc1-211161024": {
-      "sha512": "UbFu6NIPI8pDL/lZlajUQ06OQNJvkpUWYBDIZr+HaqiXseE0Jja1kXTFg2gxKpjuruRinR7e7+/qnAAE3/BPcw==",
+    "System.IdentityModel.Tokens/5.0.0-beta8-210131116": {
+      "sha512": "TMDa85yh/+XuOhQX/EU+A++hgkTUCeOHmlEsVFr+nrec7EJZTIBvJMgAmpcMwOH/qW3zPWJkvBlW6tt0Wp4vGw==",
       "type": "package",
-      "path": "system.identitymodel.tokens/5.0.0-rc1-211161024",
+      "path": "system.identitymodel.tokens/5.0.0-beta8-210131116",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/dotnet5.4/System.IdentityModel.Tokens.dll",
-        "lib/dotnet5.4/System.IdentityModel.Tokens.xml",
+        "lib/dnx451/System.IdentityModel.Tokens.dll",
+        "lib/dnx451/System.IdentityModel.Tokens.xml",
+        "lib/dnxcore50/System.IdentityModel.Tokens.dll",
+        "lib/dnxcore50/System.IdentityModel.Tokens.xml",
         "lib/net451/System.IdentityModel.Tokens.dll",
         "lib/net451/System.IdentityModel.Tokens.xml",
-        "system.identitymodel.tokens.5.0.0-rc1-211161024.nupkg.sha512",
+        "system.identitymodel.tokens.5.0.0-beta8-210131116.nupkg.sha512",
         "system.identitymodel.tokens.nuspec"
       ]
     },
@@ -1357,10 +1377,12 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.2",
       "Microsoft.EntityFrameworkCore >= 5.0.2",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.2",
       "Microsoft.EntityFrameworkCore.Sqlite >= 5.0.2",
-      "System.IdentityModel.Tokens >= 5.0.0-rc1-211161024",
+      "Microsoft.IdentityModel.Tokens >= 6.8.0",
+      "System.IdentityModel.Tokens >= 5.0.0-beta8-210131116",
       "System.IdentityModel.Tokens.Jwt >= 6.8.0"
     ]
   },
@@ -1399,6 +1421,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[5.0.2, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[5.0.2, )"
@@ -1413,9 +1439,13 @@
             "target": "Package",
             "version": "[5.0.2, )"
           },
+          "Microsoft.IdentityModel.Tokens": {
+            "target": "Package",
+            "version": "[6.8.0, )"
+          },
           "System.IdentityModel.Tokens": {
             "target": "Package",
-            "version": "[5.0.0-rc1-211161024, )"
+            "version": "[5.0.0-beta8-210131116, )"
           },
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",
@@ -1449,8 +1479,17 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'System.IdentityModel.Tokens 5.0.0-rc1-211161024' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "message": "Package 'System.IdentityModel.Tokens 5.0.0-beta8-210131116' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
       "libraryId": "System.IdentityModel.Tokens",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1202",
+      "level": "Error",
+      "message": "Package Microsoft.AspNetCore.Authentication.JwtBearer 5.0.2 is not compatible with netcoreapp3.1 (.NETCoreApp,Version=v3.1). Package Microsoft.AspNetCore.Authentication.JwtBearer 5.0.2 supports: net5.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "Microsoft.AspNetCore.Authentication.JwtBearer",
       "targetGraphs": [
         ".NETCoreApp,Version=v3.1"
       ]
