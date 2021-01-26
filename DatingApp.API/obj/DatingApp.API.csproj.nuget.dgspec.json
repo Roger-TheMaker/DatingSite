@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj": {}
+    "D:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj": {}
   },
   "projects": {
-    "d:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj": {
+    "D:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj",
+        "projectUniqueName": "D:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj",
         "projectName": "DatingApp.API",
-        "projectPath": "d:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj",
+        "projectPath": "D:\\DatingApp\\DatingApp.API\\DatingApp.API.csproj",
         "packagesPath": "C:\\Users\\Roger\\.nuget\\packages\\",
-        "outputPath": "d:\\DatingApp\\DatingApp.API\\obj\\",
+        "outputPath": "D:\\DatingApp\\DatingApp.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Roger\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,7 +38,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[5.0.2, )"
+              "version": "[3.1.8, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -57,10 +57,6 @@
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
               "version": "[6.8.0, )"
-            },
-            "System.IdentityModel.Tokens": {
-              "target": "Package",
-              "version": "[5.0.0-beta8-210131116, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
