@@ -1,4 +1,7 @@
+import { tokenize } from '@angular/compiler/src/ml_parser/lexer';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -8,12 +11,24 @@ import { Component, OnInit } from '@angular/core';
 export class NavComponent implements OnInit {
   model: any = {};
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
-  login(): void {
-    console.log(this.model);
+  login(): any {
+    this.authService.login(this.model).subscribe(next => {
+      console.log('Logged in succesfully');
+    }, error => {
+      console.log('Failed to login');
+    });
+  }
+  loggedIn(): any{
+    const token = localStorage.getItem('token');
+    return !!token;
   }
 
+  logout(): void{
+    localStorage.removeItem('token');
+    console.log('logged in ');
+  }
 }
