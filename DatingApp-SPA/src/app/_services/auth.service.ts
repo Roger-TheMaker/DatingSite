@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
 
 @Injectable({
@@ -7,11 +8,12 @@ import {map} from 'rxjs/operators';
 })
 export class AuthService {
 
+baseUrl = 'http://localhost:5000/api/auth/';
+
 constructor(private http: HttpClient) {}
 
-  baseUrl = 'http://localhost:5000/api/auth/';
 
-  login(model: any): any {
+  login(model: any): any{
 return this.http.post(this.baseUrl + 'login', model)
 .pipe(
   map((response: any) => {
@@ -21,5 +23,9 @@ return this.http.post(this.baseUrl + 'login', model)
      }
    })
   );
+ }
+
+ register(model: any): any{
+   return this.http.post(this.baseUrl + 'register', model);
  }
 }

@@ -15,6 +15,7 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   login(): any {
     this.authService.login(this.model).subscribe(next => {
       console.log('Logged in succesfully');
@@ -29,6 +30,6 @@ export class NavComponent implements OnInit {
 
   logout(): void{
     localStorage.removeItem('token');
-    console.log('logged in ');
+    console.log('logged out ');
   }
 }
