@@ -20,7 +20,8 @@ export class RegisterComponent implements OnInit {
     this.authService.register(this.model).subscribe(() => {
       this.alertify.success('registration sucessful');
     }, error => {
-      this.alertify.error(error);
+      this.alertify.error('The fields are required for completion');
+      console.log(error);
     });
   }
 
