@@ -18,7 +18,7 @@ export class AppComponent implements OnInit{
       this.authService.decodedToken = this.jwtHelper.decodeToken(token);
       // we are doing this to persist the token, so the username
       // from the navbar
-      // grija cand pui token in (), sa nu dea dracu sa il pui intre ''
+      // grija cand pui tokenul in (), sa nu dea dracu sa il pui intre ''
     }
   }
 }
