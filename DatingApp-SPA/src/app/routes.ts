@@ -6,7 +6,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { AuthGuard } from './_guards/auth.guard';
 
 export const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   {
     path: '', // nothing + any child route => what we want
     runGuardsAndResolvers: 'always',
@@ -20,6 +20,6 @@ export const appRoutes: Routes = [
   { path: 'members', component: MemberListComponent },
   { path: 'messages', component: MessagesComponent },
   { path: 'lists', component: ListsComponent },
-  { path: '**', redirectTo: 'home' , pathMatch: 'full'},
+  { path: '**', redirectTo: '' , pathMatch: 'full'},
 ];
 
