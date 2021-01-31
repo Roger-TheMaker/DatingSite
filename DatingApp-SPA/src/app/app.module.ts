@@ -18,6 +18,7 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { MemberDetailedComponent } from './members/member-detailed/member-detailed.component';
 
 
 export function tokenGetter(): any{
@@ -33,7 +34,8 @@ export function tokenGetter(): any{
       MemberListComponent,
       ListsComponent,
       MessagesComponent,
-      MemberCardComponent
+      MemberCardComponent,
+      MemberDetailedComponent
    ],
   imports: [
     BrowserModule,
