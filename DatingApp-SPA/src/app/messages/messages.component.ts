@@ -9,7 +9,7 @@ export class MessagesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

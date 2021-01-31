@@ -9,7 +9,7 @@ export class MemberListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
