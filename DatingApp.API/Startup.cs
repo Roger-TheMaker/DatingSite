@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using DatingApp.API.Helpers;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using AutoMapper;
 
 namespace DatingApp.API
 {
@@ -37,6 +38,7 @@ namespace DatingApp.API
             services.AddCors();
             services.AddScoped<IAuthRespository, AuthRepository>();
             services.AddScoped<IDatingRepository, DatingRepository>();
+            services.AddAutoMapper(typeof(DatingRepository).Assembly);
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options => {
                 options.TokenValidationParameters = new TokenValidationParameters
