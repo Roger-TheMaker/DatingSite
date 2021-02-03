@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxGalleryModule } from 'ngx-gallery-9';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -38,7 +39,7 @@ export function tokenGetter(): any{
       ListsComponent,
       MessagesComponent,
       MemberCardComponent,
-      MemberDetailedComponent
+      MemberDetailedComponent,
    ],
   imports: [
     BrowserModule,
@@ -47,6 +48,7 @@ export function tokenGetter(): any{
     BsDropdownModule.forRoot(),
     BrowserAnimationsModule,
     TabsModule,
+    NgxGalleryModule,
     RouterModule.forRoot(appRoutes),
     JwtModule.forRoot({
       config: {
