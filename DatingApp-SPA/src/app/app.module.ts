@@ -23,6 +23,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { MemberDetailedComponent } from './members/member-detailed/member-detailed.component';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 
 
 export function tokenGetter(): any{
@@ -40,6 +42,7 @@ export function tokenGetter(): any{
       MessagesComponent,
       MemberCardComponent,
       MemberDetailedComponent,
+      MemberEditComponent
    ],
   imports: [
     BrowserModule,
@@ -62,7 +65,8 @@ export function tokenGetter(): any{
     ErrorInterceptorProvider,
     AuthService,
     MemberListResolver,
-    MemberDetailResolver
+    MemberDetailResolver,
+    MemberEditResolver
   ],
   bootstrap: [AppComponent]
 })
