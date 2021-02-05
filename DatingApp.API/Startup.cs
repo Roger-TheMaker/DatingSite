@@ -36,6 +36,7 @@ namespace DatingApp.API
                 o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });    
             services.AddCors();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddScoped<IAuthRespository, AuthRepository>();
             services.AddScoped<IDatingRepository, DatingRepository>();
             services.AddAutoMapper(typeof(DatingRepository).Assembly);
