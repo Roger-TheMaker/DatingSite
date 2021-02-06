@@ -17,8 +17,8 @@ namespace DatingApp.API.Data
         {
             //this method will compare the username and the hashed password with 
             //what we have in our database
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == username);
-            
+            var user = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync(x => x.Username == username);
+            // to get the list of photos ALONG SIDE WITH OTHER STUFF we need the INCLUDE
             if(user == null)
                 return null;
 
