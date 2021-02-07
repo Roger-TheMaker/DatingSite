@@ -94,7 +94,7 @@ namespace DatingApp.API.Controllers
                 var photoToReturn = _mapper.Map<PhotoForReturnDto>(photo);
                 // cream variabila asta aici pentru daca o facem mai inainte nu avem disponibil id ul 
                 // acesta devine disponibil dupa saveAll()
-                        return CreatedAtRoute("GetPhoto", new { id = photo.Id }, photoToReturn);
+                        return CreatedAtRoute("GetPhoto", new {userId, id = photo.Id }, photoToReturn);
             }
             return BadRequest("Could not add the photo");
         }
