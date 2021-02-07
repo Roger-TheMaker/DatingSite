@@ -80,7 +80,7 @@ namespace DatingApp.API.Controllers
             }
 
             photoForCreationDto.Url = uploadResult.Url.ToString();
-            photoForCreationDto.PublicId = uploadResult.ToString();
+            photoForCreationDto.PublicId = uploadResult.PublicId;
 
             var photo = _mapper.Map<Photo>(photoForCreationDto);
 

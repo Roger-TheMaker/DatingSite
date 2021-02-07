@@ -66,8 +66,8 @@ export class PhotoEditorComponent implements OnInit {
     .subscribe(() => {
       this.currentMain = this.photos.filter(p => p.isMain === true)[0];
       this.currentMain.isMain = false;
-      photo.isMain = true; // pentru modificarea directa a butoanelor din browser
-
+      photo.isMain = true;
+      // pentru modificarea directa a butoanelor din browser
       this.authService.changeMemberPhoto(photo.url);
       this.authService.currentUser.photoUrl = photo.url;
       localStorage.setItem('user', JSON.stringify(this.authService.currentUser));
