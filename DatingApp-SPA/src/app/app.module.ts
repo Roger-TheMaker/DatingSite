@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDropdownModule} from 'ngx-bootstrap/dropdown';
 import { NgxGalleryModule } from 'ngx-gallery-9';
 import { FileUploadModule } from 'ng2-file-upload';
 
@@ -53,11 +54,12 @@ export function tokenGetter(): any{
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    TabsModule,
+    TabsModule.forRoot(),
     ReactiveFormsModule,
     NgxGalleryModule,
     FileUploadModule,
     BsDatepickerModule.forRoot(),
+    BsDropdownModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     JwtModule.forRoot({
       config: {
