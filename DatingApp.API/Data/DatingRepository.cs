@@ -50,29 +50,11 @@ namespace DatingApp.API.Data
             .FirstOrDefaultAsync( u => u.Id == id);
             return user;
         }
-        
-         private async Task<IEnumerable<int>> GetUserLikes(int id, bool likers)
-        {   // bool -> true -> the users that liked the current logged in user, 
-            // bool -> false -> the users that I have been liked
-            var user = await _context.Users
-                .Include(x => x.Likers)
-                .Include(x => x.Likees)
-                .FirstOrDefaultAsync(u => u.Id == id);
-
-            if (likers)
-            {
-               return user.Likers.Where(u => u.LikeeId == id).Select(i => i.LikerId);
-               // select -> returns a list of integers, not users
-            }
-            else 
-            {
-               return user.Likees.Where(u => u.LikerId == id).Select(i => i.LikeeId);
-            }
-        }
 
         public async Task<PagedList<User>> GetUsers(UserParams userParams)
         {
-            var users = _context.Users.Include(p => p.Photos).AsQueryable();
+            var users = _context.Users.Include(p => p.Photos)
+                .OrderByDescending(u => u.LastActive).AsQueryable();
 
             users = users.Where(u => u.Id != userParams.UserId);
 
@@ -86,7 +68,7 @@ namespace DatingApp.API.Data
                 users = users.Where(u => userLikers.Contains(u.Id));
             }
 
-            if(userParams.Likees)
+            if (userParams.Likees)
             {
                 var userLikees = await GetUserLikes(userParams.UserId, userParams.Likers);
                 users = users.Where(u => userLikees.Contains(u.Id));
@@ -106,6 +88,26 @@ namespace DatingApp.API.Data
             return await PagedList<User>.CreateAsync(users, userParams.PageNumber,
              userParams.PageSize);
         }
+
+         private async Task<IEnumerable<int>> GetUserLikes(int id, bool likers)
+        {   // bool -> true -> the users that liked the current logged in user, 
+            // bool -> false -> the users that I have been liked
+            var user = await _context.Users
+                .Include(x => x.Likers)
+                .Include(x => x.Likees)
+                .FirstOrDefaultAsync(u => u.Id == id);
+
+            if (likers)
+            {
+               return user.Likers.Where(u => u.LikeeId == id).Select(i => i.LikerId);
+               // select -> returns a list of integers, not users
+            }
+            else 
+            {
+               return user.Likees.Where(u => u.LikerId == id).Select(i => i.LikeeId);
+            }
+        }
+        
 
         public async Task<bool> SaveAll()
         {
