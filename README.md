@@ -1,3 +1,4 @@
+![DatingApp](https://user-images.githubusercontent.com/62359701/114781117-ec412880-9d80-11eb-90f6-df28510b9aea.png)
 # DatingSite - IN PROGRESS
 
   An interactive web application with ASPNET Core API and Angular.
